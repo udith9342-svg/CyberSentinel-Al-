@@ -1,1 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CyberSentinel AI - a unified cybersecurity analysis workspace.">
+  <title>CyberSentinel AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="CyberSentinel AI home"><span class="brand-mark">CS</span><span>CyberSentinel <b>AI</b></span></a>
+    <span class="status"><i></i> Prototype workspace</span>
+  </header>
 
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">UNIFIED CYBERSECURITY AGENT</p>
+      <h1>One place to inspect<br><span>digital threats.</span></h1>
+      <p class="subheading">Check suspicious emails, links, messages, audio and video through one analysis workspace.</p>
+      <div class="capabilities">
+        <span>✉ Email</span><span>↗ URLs</span><span>▤ Messages</span><span>◖ Audio</span><span>▣ Video</span>
+      </div>
+    </section>
+
+    <section class="workspace" aria-labelledby="analyzer-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">THREAT ANALYSIS</p><h2 id="analyzer-title">Analyze content</h2></div>
+        <span class="step">01 / INPUT</span>
+      </div>
+
+      <form id="analysis-form">
+        <label for="input-type">What would you like to check?</label>
+        <select id="input-type" name="input_type">
+          <option value="email">Suspicious email</option>
+          <option value="url">Website or URL</option>
+          <option value="message">Text or social-engineering message</option>
+          <option value="audio">Audio recording / voice</option>
+          <option value="video">Video / possible deepfake</option>
+        </select>
+
+        <label for="content">Paste the content or enter the URL</label>
+        <textarea id="content" name="text" rows="7" placeholder="Paste an email, message, or URL here..." spellcheck="false"></textarea>
+
+        <div class="upload-row">
+          <label class="file-label" for="file-input"><span>＋</span> Attach audio or video (optional)</label>
+          <input id="file-input" name="file" type="file" accept="audio/*,video/*">
+          <span id="file-name">No file selected</span>
+        </div>
+
+        <button id="analyze-button" type="submit"><span>Analyze for threats</span><span aria-hidden="true">→</span></button>
+        <p class="privacy-note">Use sample or non-sensitive content. Do not upload private recordings or confidential information.</p>
+      </form>
+
+      <section id="result" class="result" aria-live="polite" hidden>
+        <div class="result-heading"><div><p class="eyebrow">ANALYSIS OUTPUT</p><h2>Risk report</h2></div><span id="risk-label" class="risk-label">Pending</span></div>
+        <p id="result-summary"></p>
+        <ul id="result-findings"></ul>
+        <p id="result-note" class="result-note"></p>
+      </section>
+    </section>
+
+    <footer><span>CyberSentinel AI</span><span>Built for safer digital interactions</span></footer>
+  </main>
+</body>
+</html>
