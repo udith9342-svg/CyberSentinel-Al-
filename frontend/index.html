@@ -1,9 +1,17 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CyberSentinel AI</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="CyberSentinel AI cybersecurity prototype"><title>CyberSentinel AI</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
 <body>
-<header><div class="brand"><span class="mark">CS</span> CyberSentinel <b>AI</b></div><span class="status">Prototype workspace</span></header>
-<main><section class="hero"><p class="eyebrow">UNIFIED CYBERSECURITY AGENT</p><h1>Detect. Analyze.<br><span>Protect.</span></h1><p>Inspect suspicious emails, links and messages in one workspace. Audio and video analysis are planned modules.</p></section>
-<section class="panel"><p class="eyebrow">THREAT ANALYSIS</p><h2>Analyze content</h2><form id="scan-form"><label for="kind">Content type</label><select id="kind"><option value="email">Email</option><option value="url">Website / URL</option><option value="message">Text message</option><option value="audio">Audio (planned)</option><option value="video">Video (planned)</option></select><label for="sample">Paste content or URL</label><textarea id="sample" rows="7" placeholder="Paste suspicious content here..."></textarea><button>Analyze sample <span>→</span></button></form><div id="output" aria-live="polite"></div><small>Prototype: do not submit passwords, OTPs, private messages or confidential files. No automated verdict is generated until detection modules are implemented.</small></section></main>
-<footer>CyberSentinel AI · Hackathon prototype</footer>
+<header><div class="brand"><span class="mark">CS</span> CyberSentinel <b>AI</b></div><span class="status"><i></i> Prototype workspace</span></header>
+<main>
+<section class="hero"><p class="eyebrow">UNIFIED CYBERSECURITY AGENT</p><h1>Detect. Analyze.<br><span>Protect.</span></h1><p>Inspect suspicious emails, website links and social-engineering messages in one workspace. Audio and video upload paths are connected, with detection modules planned.</p><div class="chips"><span>Email</span><span>URL</span><span>Messages</span><span>Audio</span><span>Video</span></div></section>
+<section class="panel"><div class="panel-head"><div><p class="eyebrow">THREAT ANALYSIS</p><h2>Analyze content</h2></div><span class="step">01 / INPUT</span></div>
+<form id="scan-form">
+<label for="kind">What do you want to inspect?</label><select id="kind" name="input_type"><option value="email">Suspicious email</option><option value="url">Website / URL</option><option value="message">Text / social-engineering message</option><option value="audio">Audio / voice recording</option><option value="video">Video / possible deepfake</option></select>
+<label for="sample">Paste the content or URL</label><textarea id="sample" name="text" rows="6" placeholder="Paste suspicious email, message, or URL here..."></textarea>
+<div id="upload-wrap" hidden><label for="file">Attach audio or video</label><input id="file" name="file" type="file" accept="audio/*,video/*"><small id="file-info">Maximum file size: 20 MB. Uploads are processed in memory and not saved by this prototype.</small></div>
+<button id="analyze" type="submit">Analyze sample <span>→</span></button>
+</form><section id="output" class="output" aria-live="polite" hidden></section>
+<small class="notice">Prototype only. Do not submit passwords, OTPs, private messages or confidential recordings. A clean result does not prove content is safe.</small>
+</section></main><footer>CyberSentinel AI · Hackathon prototype</footer>
 </body></html>
